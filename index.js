@@ -1,49 +1,26 @@
-const { ApolloServer } = require("apollo-server");
-const typeDefs = `
-    type Query {
-        totalPhotos: Int!
-        allPhotos: [Photo!]!
-    }
-    type Mutation {
-      postPhoto (name: String! description: String): Photo!
-    }
-    type Photo {
-      id: ID!
-      url: String!
-      name: String!
-      description: String
-    }
-`;
-let _id = 0;
-let photos = [];
-const resolvers = {
-  Query: {
-    totalPhotos: () => photos.length,
-    allPhotos: () => photos
-  },
-  Mutation: {
-    postPhoto(parent, args) {
-      let newPhoto = {
-        id: _id++,
-        ...args
-      }
-      photos.push(newPhoto)
-      return newPhoto
-    }
-  },
-  Photo: {
-    url: parent => `http://godcodetop.com/img/${parent.id}.jpg`
-  }
-};
-
+const { ApolloServer } = require('apollo-server-express');
+const expressPlayground = require('graphql-playground-middleware-express').default
+const express = require('express')
+const app = express()
+const { readFileSync } = require('fs')
+const typeDefs = readFileSync('./typeDefs.graphql', 'UTF-8') //引入schema
+const resolvers = require('./resolvers') //引入解析器
 const server = new ApolloServer({
   typeDefs,
   resolvers
 })
+server.applyMiddleware({ app })
 
-server
-  .listen()
-  .then(({ url }) => console.log(`
-    GraphQL Service running on ${url}
+app.get('/', (req, res) => {
+  res.end('graphql api')
+})
+
+app.get('/playground', expressPlayground({ endpoint: '/graphql' }))
+
+
+app
+  .listen({ port: 4000 }, () => {
+    console.log(`
+    GraphQL Service running on http://localhost:4000
   `)
-  );
+  })
