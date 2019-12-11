@@ -1,20 +1,21 @@
 
 const { GraphQLScalarType } = require('graphql')
 let photos = [];
-let _id = 0;
 const resolvers = {
     Query: {
-        totalPhotos: () => photos.length,
-        allPhotos: () => photos
+        totalPhotos: (parent, args, { db }) => db.collection('photos').estimatedDocumentCount(),
+        allPhotos: (parent, args, { db }) => db.collection('photos').find().toArray(),
+        totalUsers: (parent, args, { db }) => db.collection('users').estimatedDocumentCount(),
+        allUsers: (parent, args, { db }) => db.collection('users').find().toArray()
     },
     Mutation: {
-        postPhoto(parent, args) {
+        postPhoto(parent, args, { db }) {
             let newPhotos = {
-                id: _id++,
                 ...args.input
             }
-            photos.push(newPhotos)
-            return newPhotos
+            db.collection('photos').insertOne(newPhotos)
+            // photos.push(newPhotos)
+            return db.collection('photos').find().toArray()
         }
     },
     Photo: {
