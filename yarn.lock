@@ -660,7 +660,7 @@ create-error-class@^3.0.0:
 
 cross-fetch@2.2.2:
   version "2.2.2"
-  resolved "http://r.cnpmjs.org/cross-fetch/download/cross-fetch-2.2.2.tgz#a47ff4f7fc712daba8f6a695a11c948440d45723"
+  resolved "https://r.cnpmjs.org/cross-fetch/download/cross-fetch-2.2.2.tgz#a47ff4f7fc712daba8f6a695a11c948440d45723"
   integrity sha1-pH/09/xxLauo9qaVoRyUhEDUVyM=
   dependencies:
     node-fetch "2.1.2"
@@ -958,7 +958,7 @@ graphql-playground-middleware-express@^1.7.12:
 
 graphql-request@^1.8.2:
   version "1.8.2"
-  resolved "http://r.cnpmjs.org/graphql-request/download/graphql-request-1.8.2.tgz#398d10ae15c585676741bde3fc01d5ca948f8fbe"
+  resolved "https://r.cnpmjs.org/graphql-request/download/graphql-request-1.8.2.tgz#398d10ae15c585676741bde3fc01d5ca948f8fbe"
   integrity sha1-OY0QrhXFhWdnQb3j/AHVypSPj74=
   dependencies:
     cross-fetch "2.2.2"
@@ -1320,7 +1320,7 @@ negotiator@0.6.2:
 
 node-fetch@2.1.2:
   version "2.1.2"
-  resolved "http://r.cnpmjs.org/node-fetch/download/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
+  resolved "https://r.cnpmjs.org/node-fetch/download/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
   integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
 
 node-fetch@^2.1.2, node-fetch@^2.2.0:
@@ -1379,9 +1379,9 @@ object-keys@^1.0.12, object-keys@^1.1.1:
   integrity sha1-HEfyct8nfzsdrwYWd9nILiMixg4=
 
 object-path@^0.11.4:
-  version "0.11.4"
-  resolved "https://registry.npm.taobao.org/object-path/download/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
-  integrity sha1-NwrnUvvzfePqcKhhwju6iRVpGUk=
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.5.tgz#d4e3cf19601a5140a55a16ad712019a9c50b577a"
+  integrity sha512-jgSbThcoR/s+XumvGMTMf81QVBmah+/Q7K7YduKeKVWL7N111unR2d6pZZarSk6kY/caeNxUDyxOvMWyzoU2eg==
 
 object.getownpropertydescriptors@^2.0.3:
   version "2.0.3"
@@ -1833,7 +1833,7 @@ vary@^1, vary@~1.1.2:
 
 whatwg-fetch@2.0.4:
   version "2.0.4"
-  resolved "http://r.cnpmjs.org/whatwg-fetch/download/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+  resolved "https://r.cnpmjs.org/whatwg-fetch/download/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
   integrity sha1-3eal3zFfnTmZGqF2IYU9cguFVm8=
 
 which@^1.2.9:
